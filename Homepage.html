@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学校官网</title>
+
+  <!-- Tailwind 仅用于辅助类；关闭 preflight 避免全局 reset 影响自定义样式 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false }, // 关闭Tailwind的默认重置样式
+      theme: { extend: {} }
+    }
+  </script>
+
+ <link rel="stylesheet" href="jcut.css">
+</head>
+
+<body>
+  <!-- *********************************LOGO内容开始**********************************-->
+  <div class="header">
+    <div class="header-inner">
+      <div class="header-l">
+        <img src="PictureFiles/jcutlogo.png" class="logo" alt="">
+        <img src="PictureFiles/jcut_xx.png" class="jcutxx" alt="">
+      </div>
+      <div class="header-r">
+        <div class="header-links">
+          <a href="login.html">信息门户</a> |
+          <a href="#">邮箱系统</a> |
+          <a href="#">招标信息</a> |
+          <a href="#">书记校长信箱</a> |
+          <a href="#">校友</a> |
+          <a href="#">考生</a>
+        </div>
+        <form class="search-form">
+          <input type="text" class="search" placeholder="">
+          <input type="image" class="searching" src="PictureFiles/ssffdj.png" alt="搜索">
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- *********************************LOGO内容结束***********************************-->
+
+  <!-- *********************************导航条内容开始********************************* -->
+  <div class="nav-container">
+    <div class="nav">
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li>
+          <a href="#">学校概括</a>
+          <ol>
+            <li><a href="#">学校简介</a></li>
+            <li><a href="#">学校章程</a></li>
+            <li><a href="#">形象标识</a></li>
+            <li><a href="#">发展规划</a></li>
+            <li><a href="#">现任领导</a></li>
+            <li><a href="#">校园风光</a></li>
+            <li><a href="#">校园地图</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#">机构设置</a>
+          <ol>
+            <li><a href="#">职能部门</a></li>
+            <li><a href="#">教学单位</a></li>
+            <li><a href="#">直属单位</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#">人才培养</a>
+          <ol>
+            <li><a href="#">普通教育</a></li>
+            <li><a href="#">继续教育</a></li>
+            <li><a href="#">国际教育</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#">科学研究</a>
+          <ol>
+            <li><a href="#">科学管理</a></li>
+            <li><a href="#">科学机构</a></li>
+            <li><a href="#">科学服务</a></li>
+            <li><a href="#">学术期刊</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#">附属医院</a>
+          <ol>
+            <li><a href="#">荆门市中心医院</a></li>
+            <li><a href="#">荆门市人民医院</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#">招生就业</a>
+          <ol>
+            <li><a href="#">普通教育招生</a></li>
+            <li><a href="#">继续教育招生</a></li>
+            <li><a href="#">国际教育招生</a></li>
+            <li><a href="#">就业指导</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#">校园文化</a>
+          <ol>
+            <li><a href="#">形象系统</a></li>
+            <li><a href="#">校园媒体</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#">公共服务</a>
+          <ol>
+            <li><a href="#">办公电话</a></li>
+            <li><a href="#">学校校历</a></li>
+          </ol>
+        </li>
+        <li><a href="#">信息公开</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- *********************************导航条内容结束********************************* -->
+
+  <!-- *********************************顶部大轮播内容开始********************************* -->
+  <div class="banner">
+    <div id="pic">
+      <div class="slide show"><img src="PictureFiles/lbt1.jpg" alt="轮播图1"></div>
+      <div class="slide"><img src="PictureFiles/lbt2.jpg" alt="轮播图2"></div>
+      <div class="slide"><img src="PictureFiles/lbt3.jpg" alt="轮播图3"></div>
+      <div class="slide"><img src="PictureFiles/lbt4.jpg" alt="轮播图4"></div>
+      <div class="slide"><img src="PictureFiles/lbt5.png" alt="轮播图5"></div>
+      <div class="slide"><img src="PictureFiles/lbt6.jpg" alt="轮播图6"></div>
+    </div>
+    <div id="leftbtn">&lt;</div>
+    <div id="rightbtn">&gt;</div>
+    <div id="btn"></div>
+  </div>
+  <!-- *********************************顶部大轮播内容结束********************************* -->
+
+  <div class="jclg">
+    <!-- *********************************news1：学校新闻 + 通知公告********************************* -->
+    <div class="news">
+      <div class="news1">
+        <div class="content-1200 py-8">
+          <div class="w-[1200px] h-[400px] overflow-hidden flex news1-card">
+            <!-- 左列：学校新闻（固定 800px） -->
+            <div class="news1-left">
+              <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-[#7F0606]">学校新闻</h2>
+                <a href="#" class="text-sm text-gray-500 hover:text-[#7F0606]">更多 <i class="fa fa-angle-right"></i></a>
+              </div>
+              <!-- 下划线 + hr -->
+              <div class="n1-title-line">
+                <span class="news2-underline"></span>
+                <hr class="news2-hr">
+              </div>
+              <div class="flex">
+                <!-- 小图静态轮播（5 张，第一张显示） -->
+                <div class="carousel-container">
+                  <div class="carousel-slide active">
+                    <img src="PictureFiles/news1_lb1.jpg" alt="*" class="xlbtpic">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                      <h3 class="text-white font-bold">我校召开庆祝第41个教师节表彰大会</h3>
+                    </div>
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="PictureFiles/news1_lb2.jpg" alt="*" class="xlbtpic">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                      <h3 class="text-white font-bold">荆楚理工学院2025届毕业典礼暨学位授予仪式举行</h3>
+                    </div>
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="PictureFiles/news1_lb3.jpg" alt="*" class="xlbtpic">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                      <h3 class="text-white font-bold">我校召开四届四次教职工代表大会暨工会会员代表大会</h3>
+                    </div>
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="PictureFiles/news1_lb4.jpg" alt="*" class="xlbtpic">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                      <h3 class="text-white font-bold">中共荆楚理工学院第一届委员会第六次全体会议召开</h3>
+                    </div>
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="PictureFiles/news1_lb5.jpg" alt="*" class="xlbtpic">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                      <h3 class="text-white font-bold">省政协副主席尔肯江·吐拉洪来校调研</h3>
+                    </div>
+                  </div>
+                  <!-- 5 个小圆点（悬停切换） -->
+                  <div class="n1-dots">
+                    <span class="n1-dot"></span>
+                    <span class="n1-dot"></span>
+                    <span class="n1-dot"></span>
+                    <span class="n1-dot"></span>
+                    <span class="n1-dot"></span>
+                  </div>
+                </div>
+                <!-- 右侧列表 -->
+                <div class="w-[380px] h-[280px] ml-4 overflow-y-auto scrollbar-hide">
+                  <div class="news-item flex items-center h-[36px] border-b border-gray-100 hover:bg-gray-50">
+                    <img class="icon" src="PictureFiles/ico_002.png" alt="·">&nbsp;
+                    <a href="#" class="news-title text-gray-800 flex-1 truncate">我校举办2025年秋季开学典礼，校长发表重要讲话</a>
+                    <span class="date text-gray-400 text-sm ml-2">09-01</span>
+                  </div>
+                  <div class="news-item flex items-center h-[36px] border-b border-gray-100 hover:bg-gray-50">
+                    <img class="icon" src="PictureFiles/ico_002.png" alt="·">&nbsp;
+                    <a href="#" class="news-title text-gray-800 flex-1 truncate">关于开展2025-2026学年第一学期奖学金评选工作的通知</a>
+                    <span class="date text-gray-400 text-sm ml-2">08-28</span>
+                  </div>
+                  <div class="news-item flex items-center h-[36px] border-b border-gray-100 hover:bg-gray-50">
+                    <img class="icon" src="PictureFiles/ico_002.png" alt="·">&nbsp;
+                    <a href="#" class="news-title text-gray-800 flex-1 truncate">我校成功举办2025年秋季运动会，师生共同参与</a>
+                    <span class="date text-gray-400 text-sm ml-2">08-25</span>
+                  </div>
+                  <div class="news-item flex items-center h-[36px] border-b border-gray-100 hover:bg-gray-50">
+                    <img class="icon" src="PictureFiles/ico_002.png" alt="·">&nbsp;
+                    <a href="#" class="news-title text-gray-800 flex-1 truncate">我校与多家科技公司签署校企合作协议，共建实习基地</a>
+                    <span class="date text-gray-400 text-sm ml-2">08-20</span>
+                  </div>
+                  <div class="news-item flex items-center h-[36px] border-b border-gray-100 hover:bg-gray-50">
+                    <img class="icon" src="PictureFiles/ico_002.png" alt="·">&nbsp;
+                    <a href="#" class="news-title text-gray-800 flex-1 truncate">我校教师在省级学科竞赛中取得优异成绩</a>
+                    <span class="date text-gray-400 text-sm ml-2">08-15</span>
+                  </div>
+                  <div class="news-item flex items-center h-[36px] border-b border-gray-100 hover:bg-gray-50">
+                    <img class="icon" src="PictureFiles/ico_002.png" alt="·">&nbsp;
+                    <a href="#" class="news-title text-gray-800 flex-1 truncate">关于开展2025年国庆节假期安全教育的通知</a>
+                    <span class="date text-gray-400 text-sm ml-2">09-25</span>
+                  </div>
+                  <div class="news-item flex items-center h-[36px] border-b border-gray-100 hover:bg-gray-50">
+                    <img class="icon" src="PictureFiles/ico_002.png" alt="·">&nbsp;
+                    <a href="#" class="news-title text-gray-800 flex-1 truncate">我校邀请知名专家开展学术讲座</a>
+                    <span class="date text-gray-400 text-sm ml-2">09-18</span>
+                  </div>
+                  <div class="news-item flex items-center h-[36px] hover:bg-gray-50">
+                    <img class="icon" src="PictureFiles/ico_002.png" alt="·">&nbsp;
+                    <a href="#" class="news-title text-gray-800 flex-1 truncate">2025年秋季学期社团招新工作圆满结束</a>
+                    <span class="date text-gray-400 text-sm ml-2">09-10</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 右列：通知公告（400px） -->
+            <div class="news1-right">
+              <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-[#7F0606]">通知公告</h2>
+                <a href="#" class="text-sm text-gray-500 hover:text-[#7F0606]">更多 <i class="fa fa-angle-right"></i></a>
+              </div>
+              <div class="n1-title-line">
+                <span class="news2-underline"></span>
+                <hr class="news2-hr">
+              </div>
+              <div class="announcements-container">
+                <div class="announcement-item flex items-center mb-2 p-3 bg-gray-50 rounded-lg">
+                  <img src="PictureFiles/rq.png" alt="日历" class="w-[56px] h-[50px] mr-3">
+                  <div class="w-[220px]">
+                    <a href="#" class="announcement-title text-gray-800 text-base">关于2025年国庆节放假安排的通知</a>
+                  </div>
+                </div>
+                <div class="announcement-item flex items-center mb-2 p-3 bg-gray-50 rounded-lg">
+                  <img src="PictureFiles/rq.png" alt="日历" class="w-[56px] h-[50px] mr-3">
+                  <div class="w-[220px]">
+                    <a href="#" class="announcement-title text-gray-800 text-base">2025-2026学年第一学期奖学金评选通知</a>
+                  </div>
+                </div>
+                <div class="announcement-item flex items-center mb-2 p-3 bg-gray-50 rounded-lg">
+                  <img src="PictureFiles/rq.png" alt="日历" class="w-[56px] h-[50px] mr-3">
+                  <div class="w-[220px]">
+                    <a href="#" class="announcement-title text-gray-800 text-base">关于开展校园安全隐患排查的通知</a>
+                  </div>
+                </div>
+                <div class="announcement-item flex items-center p-3 bg-gray-50 rounded-lg">
+                  <img src="PictureFiles/rq.png" alt="日历" class="w-[56px] h-[50px] mr-3">
+                  <div class="w-[220px]">
+                    <a href="#" class="announcement-title text-gray-800 text-base">2025年秋季学期课程补考安排通知</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /news1-right -->
+          </div>
+          <!-- /news1-card -->
+        </div>
+        <!-- /content-1200 -->
+      </div>
+    </div>
+    <!-- *********************************news1 结束********************************* -->
+
+    <!-- *********************************news2：三列 ********************************* -->
+    <div class="news2">
+      <div class="news2-container">
+        <div class="news2-section">
+          <div class="news2-title-bar">
+            <span>院处动态</span>
+            <span><a href="#">更多>></a></span>
+          </div>
+          <div class="news2-underline"></div>
+          <hr class="news2-hr">
+          <ul class="news2-list">
+            <li>
+              <a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 校团委举办2025年大学生暑假"三下乡"....&nbsp;<img src="PictureFiles/ico_new.gif" alt="新"></a>
+              <span class="news2-post-date">10/29</span>
+            </li>
+            <li>
+              <a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 科技处举办自然科学基金项目申报评审指导会</a>
+              <span class="news2-post-date">10/19</span>
+            </li>
+            <li>
+              <a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 外国语学院举办中尼青年文化交流活动</a>
+              <span class="news2-post-date">10/19</span>
+            </li>
+            <li>
+              <a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 后勤管理与服务处召开快递服务分区建设....</a>
+              <span class="news2-post-date">10/19</span>
+            </li>
+            <li>
+              <a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 国际交流与合作处召开学生出国（境）学....</a>
+              <span class="news2-post-date">10/19</span>
+            </li>
+            <li>
+              <a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 继续教育学院举行2025级新生入学教育系....</a>
+              <span class="news2-post-date">10/19</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="news2-section">
+          <div class="news2-title-bar">
+            <span>时政聚焦</span>
+            <span><a href="#">更多>></a></span>
+          </div>
+          <div class="news2-underline"></div>
+          <hr class="news2-hr">
+          <ul class="news2-list">
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 习近平：关于《中共中央关于制定国民经济和社会...</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 中共中央关于制定国民经济和社会发展第十五个五...</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 中国共产党第二十届中央委员会第四次全体会议公报</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 《中华人民共和国网络安全法》</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 习近平：在纪念中国人民抗日战争暨世界反法西斯...</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 习近平：弘扬伟大抗战精神，向着中华民族伟大复...</a><span class="news2-post-date">10/19</span></li>
+          </ul>
+        </div>
+
+        <div class="news2-section">
+          <div class="news2-title-bar">
+            <span>学术要闻</span>
+            <span><a href="#">更多>></a></span>
+          </div>
+          <div class="news2-underline"></div>
+          <hr class="news2-hr">
+          <ul class="news2-list">
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 10月16日学术讲座预告：扩展...</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 10月14日学术讲座预告：坚守科...</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 9月28日学术讲座预告：多主元...</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 9月18日学术讲座预告：红色...</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 6月24日学术讲座预告：成果...</a><span class="news2-post-date">10/19</span></li>
+            <li><a href="#"><img class="icon" src="PictureFiles/ico_002.png" alt="·"> 6月23日学术讲座预告：调研报...</a><span class="news2-post-date">10/19</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- *********************************news2 结束********************************* -->
+
+    <!-- *********************************图片链接区********************************* -->
+    <div class="news3">
+      <div class="img-link">
+        <img src="PictureFiles/djxxjy1.jpg" alt="*">
+        <img src="PictureFiles/zt_img02.jpg" alt="*">
+        <img src="PictureFiles/7700B494EFC2DEC470ADAC5EECA77DB7.jpg" alt="*">
+        <img src="PictureFiles/zt_img022222.png" alt="*">
+      </div>
+    </div>
+  </div>
+
+  <!-- *********************************页脚********************************* -->
+  <div class="footer">
+    <div class="footer-left">
+      <img src="PictureFiles/end_logo.png" alt="荆楚理工学院校徽">
+    </div>
+    <div class="footer-middle">
+      <p>Copyright© 荆楚理工学院　接待/接访电话：0724-2355828</p>
+      <p>地址：湖北荆门市象山大道33号　邮政编码：448000</p>
+      <div class="records">
+        <span>鄂ICP备05003328号</span>
+        <img src="PictureFiles/bqxx_gab1.png" alt="公安备案图标">
+        <span>鄂公网安备42080202000206</span>
+        <img src="PictureFiles/bqxx_gab2.jpg" alt="网络110报警服务图标">
+      </div>
+    </div>
+    <div class="footer-right">
+      <img src="PictureFiles/end_ico_zsxy.png" alt="数字校园二维码">
+      <p>数字校园</p>
+    </div>
+  </div>
+
+
+  <script src="jcut.js"></script>
+</body>
+</html>

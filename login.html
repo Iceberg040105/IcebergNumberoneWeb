@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荆楚理工学院聚合认证平台</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Header部分：logo、校名、平台名称、校训 -->
+    <header>
+        <div class="header-left">
+            <img src="PictureFiles/loginlogo2.png" id="loginxx">
+        </div>
+        <a href="Homepage.html" id="back">返回首页</a>
+    </header>
+
+    <!-- Main部分：背景图+登录框 -->
+    <main>
+        <div class="carousel" aria-hidden="true">
+            <!-- 轮播的幻灯片与圆点由下面的脚本动态生成 -->
+        </div>
+        <div class="carousel-overlay" aria-hidden="true"></div>
+        <div class="carousel-dots" aria-hidden="true">
+            <!-- 圆点由脚本动态生成 -->
+        </div>
+
+        <div class="login-box">
+            <!-- 选项卡头部 -->
+            <div class="tab-header">
+                <div class="tab active" data-tab="account">账号登录</div>
+                <div class="tab" data-tab="scan">扫码登录</div>
+            </div>
+            <!-- 账号登录内容 -->
+            <div class="tab-content active" id="account">
+                <div class="form-group">
+                    <input id="text" placeholder="请输入您的账号">
+                </div>
+                <div class="form-group">
+                    <input id="password" placeholder="请输入密码">
+                </div>
+                <div class="form-group captcha">
+                    <input type="text" placeholder="请输入算术...">
+                    <span>4 + 4 =</span>
+                </div>
+                <button class="btn btn-login " onclick="judgementuser()">登录</button>
+                <button class="btn btn-reset" onclick="reseting()">重置</button>
+                <div class="other-options">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">记住密码</label>
+                    <a href="#">常见问题</a>
+                    <a href="#">忘记密码</a>
+                </div>
+                <div class="or-line">or</div>
+                <div class="qq-login">
+                    <i>🐧</i> QQ登录
+                </div>
+            </div>
+            <!-- 扫码登录内容（可后续补充二维码） -->
+            <div class="tab-content" id="scan">
+                请使用移动端APP扫码登录
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer部分：版权、地址等信息 -->
+    <footer>
+        <p>Copyright©荆楚理工学院 地址：湖北荆门市象山大道33号</p>
+        <p>邮政编码：448000 鄂ICP备05003328号 鄂公网安备42080202000206</p>
+    </footer>
+
+    <!-- 选项卡切换的JS交互 -->
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                // 移除所有active类
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                // 给当前标签和内容添加active类
+                this.classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+            });
+        });
+
+        /* 轮播背景功能（自动轮播 + 圆点切换） */
+        (function() {
+            // 在这里配置你的四张背景图路径（请按你本地的真实路径替换）
+            const images = [
+                "PictureFiles/loginlbt2.jpg",
+                "PictureFiles/loginlbt4.jpg",
+                "PictureFiles/loginlbt3.jpg",
+                "PictureFiles/loginfj.jpg",
+            ];
+
+            const carouselEl = document.querySelector('.carousel');
+            const dotsContainer = document.querySelector('.carousel-dots');
+
+            let currentIndex = 0;
+            let intervalId = null;
+            const intervalTime = 2000;//自动切换时间变量，2000ms
+
+            // 预加载图片（减少切换时闪烁）
+            function preloadImages(list) {
+                list.forEach(src => {
+                    const img = new Image();
+                    img.src = src;
+                });
+            }
+
+            // 创建幻灯片与圆点
+            function createSlides() {
+                images.forEach((src, idx) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'carousel-slide';
+                    slide.style.backgroundImage = "url('" + src + "')";
+                    if (idx === 0) {
+                        slide.classList.add('active');
+                    }
+                    carouselEl.appendChild(slide);
+
+                    const dot = document.createElement('div');
+                    dot.className = 'carousel-dot';
+                    dot.setAttribute('data-index', idx);
+                    if (idx === 0) {
+                        dot.classList.add('active');
+                    }
+                    dot.addEventListener('click', function(e) {
+                        const i = Number(this.getAttribute('data-index'));
+                        showSlide(i);
+                        resetAutoPlay();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            // 显示指定索引的幻灯片
+            function showSlide(index) {
+                const slides = document.querySelectorAll('.carousel-slide');
+                const dots = document.querySelectorAll('.carousel-dot');
+
+                slides.forEach((s, i) => {
+                    if (i === index) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+
+                dots.forEach((d, i) => {
+                    if (i === index) {
+                        d.classList.add('active');
+                    } else {
+                        d.classList.remove('active');
+                    }
+                });
+
+                currentIndex = index;
+            }
+
+            // 下一张
+            function nextSlide() {
+                const nextIndex = (currentIndex + 1) % images.length;
+                showSlide(nextIndex);
+            }
+
+            // 自动播放
+            function startAutoPlay() {
+                if (intervalId) {
+                    clearInterval(intervalId);
+                }
+                intervalId = setInterval(nextSlide, intervalTime);
+            }
+
+            // 重置自动播放（在手动切换时调用）
+            function resetAutoPlay() {
+                startAutoPlay();
+            }
+
+            // 初始化
+            function initCarousel() {
+                if (!carouselEl || !dotsContainer) {
+                    return;
+                }
+                preloadImages(images);
+                createSlides();
+                startAutoPlay();
+
+                // 可选：在鼠标移入时暂停自动播放，移出时继续
+                carouselEl.addEventListener('mouseenter', function() {
+                    if (intervalId) {
+                        clearInterval(intervalId);
+                        intervalId = null;
+                    }
+                });
+                carouselEl.addEventListener('mouseleave', function() {
+                    if (!intervalId) {
+                        startAutoPlay();
+                    }
+                });
+            }
+
+            // 等 DOM 完成后初始化
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initCarousel);
+            } else {
+                initCarousel();
+            }
+        })();
+            /***************         登录验证是否为空功能开始          ***************/
+         function judgementuser(){
+         var username = document.getElementById("text").value.trim();//获取数值     trim可去除字符串两端的空白字符  
+         var password = document.getElementById("password").value.trim();          
+                if(username == "" || password == "")//如果密码账号一个为空 就提示
+                   alert("请输入账号或者密码")
+                else
+                   alert("登录成功！")
+         }
+
+            /***************          重置按钮功能                    ***************/
+            function reseting(){
+                    var username = document.getElementById("text")  
+                    var password = document.getElementById("password")   
+                        username.value = "";
+                        password.value = "";              
+            }
+
+
+
+    </script>
+</body>
+</html>

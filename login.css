@@ -1,0 +1,270 @@
+/* ===== 基础重置与字体设置 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 盒模型设置为border-box */
+}
+body {
+  font-family: "微软雅黑", sans-serif; /* 设置默认字体 */
+  color: #333; /* 文字颜色 */
+}
+
+/* ===== 头部样式 ===== */
+header {
+  background-image: url("PictureFiles/headerbg.png"); /* 头部背景图 */
+  color: #fff; /* 文字颜色 */
+  padding: 15px 20px; /* 内边距 */
+  display: flex; /* 弹性布局 */
+  justify-content: space-between; /* 两端对齐 */
+  align-items: center; /* 垂直居中 */
+  width: 100%; /* 全宽 */
+  height: 124px; /* 固定高度 */
+}
+#back {
+  font-size: 30px; /* 返回图标大小 */
+  color: #12b7f5; /* 返回图标颜色 */
+}
+#loginxx {
+  width: 1001px; /* 登录标题图片宽度 */
+  height: 83px; /* 登录标题图片高度 */
+  margin-left: 400px; /* 左边距 */
+}
+.header-left {
+  display: flex; /* 弹性布局 */
+  align-items: center; /* 垂直居中 */
+}
+.header-left img {
+  width: 60px; /* 校徽图片宽度 */
+  height: 60px; /* 校徽图片高度 */
+  margin-right: 10px; /* 右边距 */
+}
+.school-name {
+  font-size: 24px; /* 学校名称字体大小 */
+  font-weight: bold; /* 字体加粗 */
+  line-height: 1.2; /* 行高 */
+}
+.school-name small {
+  font-size: 12px; /* 小文字字体大小 */
+  display: block; /* 块级显示 */
+}
+.platform-name {
+  margin-left: 20px; /* 左边距 */
+  font-size: 20px; /* 平台名称字体大小 */
+}
+.header-right {
+  font-size: 18px; /* 右侧文字字体大小 */
+}
+
+/* ===== 主内容区样式 ===== */
+main {
+  position: relative; /* 相对定位 */
+  height: 691px; /* 固定高度 */
+  background-size: cover; /* 背景图覆盖 */
+  display: flex; /* 弹性布局 */
+  justify-content: flex-end; /* 右对齐 */
+  align-items: center; /* 垂直居中 */
+  padding-right: 100px; /* 右内边距 */
+}
+
+/* ===== 登录框样式 ===== */
+.login-box {
+  background-color: #fff; /* 背景色 */
+  padding: 20px; /* 内边距 */
+  border-radius: 5px; /* 圆角 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+  width: 300px; /* 固定宽度 */
+  position: relative; /* 相对定位 */
+  z-index: 2; /* 层级 */
+}
+
+/* ===== 标签页头部样式 ===== */
+.tab-header {
+  display: flex; /* 弹性布局 */
+  border-bottom: 1px solid #ddd; /* 底部边框 */
+  margin-bottom: 20px; /* 下边距 */
+}
+.tab {
+  padding: 10px 20px; /* 内边距 */
+  cursor: pointer; /* 鼠标手型 */
+  font-weight: bold; /* 字体加粗 */
+}
+.tab.active {
+  color: #a52a2a; /* 激活状态文字颜色 */
+  border-bottom: 2px solid #a52a2a; /* 激活状态底部边框 */
+}
+
+/* ===== 标签页内容样式 ===== */
+.tab-content {
+  display: none; /* 默认隐藏 */
+}
+.tab-content.active {
+  display: block; /* 激活状态显示 */
+}
+
+/* ===== 表单组样式 ===== */
+.form-group {
+  margin-bottom: 15px; /* 下边距 */
+}
+.form-group input {
+  width: 100%; /* 全宽 */
+  padding: 10px; /* 内边距 */
+  border: 1px solid #ddd; /* 边框样式 */
+  border-radius: 3px; /* 圆角 */
+}
+
+/* ===== 验证码区域样式 ===== */
+.captcha {
+  display: flex; /* 弹性布局 */
+  justify-content: space-between; /* 两端对齐 */
+}
+.captcha input {
+  width: 60%; /* 输入框宽度 */
+}
+.captcha span {
+  width: 35%; /* 验证码显示区域宽度 */
+  background-color: #f0f0f0; /* 背景色 */
+  display: flex; /* 弹性布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  border: 1px solid #ddd; /* 边框样式 */
+  border-radius: 3px; /* 圆角 */
+}
+
+/* ===== 按钮样式 ===== */
+.btn {
+  width: 100%; /* 全宽 */
+  padding: 10px; /* 内边距 */
+  border: none; /* 无边框 */
+  border-radius: 3px; /* 圆角 */
+  cursor: pointer; /* 鼠标手型 */
+  margin-bottom: 10px; /* 下边距 */
+}
+.btn-login {
+  background-color: #a52a2a; /* 登录按钮背景色 */
+  color: #fff; /* 文字颜色 */
+}
+.btn-reset {
+  background-color: #ccc; /* 重置按钮背景色 */
+  color: #333; /* 文字颜色 */
+}
+
+/* ===== 其他选项样式 ===== */
+.other-options {
+  display: flex; /* 弹性布局 */
+  justify-content: space-between; /* 两端对齐 */
+  font-size: 12px; /* 字体大小 */
+  margin-bottom: 15px; /* 下边距 */
+}
+.other-options a {
+  color: #666; /* 链接颜色 */
+  text-decoration: none; /* 无下划线 */
+}
+
+/* ===== 分隔线样式 ===== */
+.or-line {
+  text-align: center; /* 文字居中 */
+  margin: 15px 0; /* 上下边距 */
+  position: relative; /* 相对定位 */
+}
+.or-line::before,
+.or-line::after {
+  content: ''; /* 伪元素内容 */
+  position: absolute; /* 绝对定位 */
+  top: 50%; /* 垂直居中 */
+  width: 40%; /* 宽度 */
+  height: 1px; /* 高度 */
+  background-color: #ddd; /* 背景色 */
+}
+.or-line::before {
+  left: 0; /* 左侧对齐 */
+}
+.or-line::after {
+  right: 0; /* 右侧对齐 */
+}
+
+/* ===== QQ登录样式 ===== */
+.qq-login {
+  display: flex; /* 弹性布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  color: #12b7f5; /* 文字颜色 */
+  cursor: pointer; /* 鼠标手型 */
+}
+.qq-login i {
+  font-size: 20px; /* 图标大小 */
+  margin-right: 5px; /* 右边距 */
+}
+
+/* ===== 页脚样式 ===== */
+footer {
+  background-color: #842E27; /* 背景色 */
+  color: #fff; /* 文字颜色 */
+  padding: 20px 0; /* 内边距 */
+  text-align: center; /* 文字居中 */
+  font-size: 14px; /* 字体大小 */
+}
+
+/* ===== 轮播背景样式 ===== */
+.carousel {
+  position: absolute; /* 绝对定位 */
+  top: 0; /* 顶部对齐 */
+  left: 0; /* 左侧对齐 */
+  width: 100%; /* 全宽 */
+  height: 100%; /* 全高 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  z-index: 0; /* 层级 */
+}
+.carousel-slide {
+  position: absolute; /* 绝对定位 */
+  top: 0; /* 顶部对齐 */
+  left: 0; /* 左侧对齐 */
+  width: 100%; /* 全宽 */
+  height: 100%; /* 全高 */
+  background-size: cover; /* 背景图覆盖 */
+  background-position: center; /* 背景图居中 */
+  background-repeat: no-repeat; /* 背景图不重复 */
+  opacity: 0; /* 默认透明 */
+  transition: opacity 0.8s ease-in-out; /* 透明度过渡效果 */
+}
+.carousel-slide.active {
+  opacity: 1; /* 激活状态透明度 */
+}
+
+/* ===== 轮播覆盖层样式 ===== */
+.carousel-overlay {
+  position: absolute; /* 绝对定位 */
+  top: 0; /* 顶部对齐 */
+  left: 0; /* 左侧对齐 */
+  width: 100%; /* 全宽 */
+  height: 100%; /* 全高 */
+  pointer-events: none; /* 禁止鼠标事件 */
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)); /* 渐变覆盖层 */
+  z-index: 1; /* 层级 */
+}
+
+/* ===== 轮播指示点样式 ===== */
+.carousel-dots {
+  position: absolute; /* 绝对定位 */
+  left: 50%; /* 水平居中 */
+  transform: translateX(-50%); /* 水平偏移 */
+  bottom: 30px; /* 底部距离 */
+  display: flex; /* 弹性布局 */
+  gap: 10px; /* 子元素间距 */
+  z-index: 3; /* 层级 */
+}
+.carousel-dot {
+  width: 12px; /* 圆点宽度 */
+  height: 12px; /* 圆点高度 */
+  border-radius: 50%; /* 圆形 */
+  background: rgba(255, 255, 255, 0.6); /* 圆点背景色 */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* 圆点边框 */
+  cursor: pointer; /* 鼠标手型 */
+  transition: transform 0.2s ease, background 0.2s ease; /* 过渡效果 */
+}
+.carousel-dot:hover {
+  transform: scale(1.1); /* 悬停时放大 */
+}
+.carousel-dot.active {
+  background: rgba(255, 255, 255, 1); /* 激活状态背景色 */
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); /* 激活状态阴影 */
+}
